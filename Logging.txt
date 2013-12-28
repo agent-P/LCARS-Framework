@@ -1,0 +1,96 @@
+Dec 28, 2013 10:16:20 AM com.spagnola.lcars.logging.LCARSLogger setup
+INFO: Logger setup completed...
+Dec 28, 2013 10:16:20 AM com.spagnola.lcars.logging.LCARSLogger setup
+WARNING: Logger test warning...
+Dec 28, 2013 10:16:20 AM com.spagnola.lcars.logging.LCARSLogger setup
+SEVERE: Logger test severe...
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseEntered
+INFO: mouseEntered: Test Button 4 - 88.0, 35.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 88.0, 35.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 75.0, 10.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseExited
+INFO: mouseExited: Test Button 4 - 61.0, -5.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseEntered
+INFO: mouseEntered: Test Button 4 - 46.0, 0.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 46.0, 0.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 46.0, 8.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 46.0, 13.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 46.0, 16.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 49.0, 19.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 52.0, 20.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 53.0, 21.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 52.0, 20.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 47.0, 17.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 44.0, 16.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 41.0, 14.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 38.0, 13.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 32.0, 12.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 20.0, 10.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 4.0, 10.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseExited
+INFO: mouseExited: Test Button 4 - -18.0, 12.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseEntered
+INFO: mouseEntered: Test Button 3 - 90.0, 30.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 3 - 90.0, 30.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 3 - 71.0, 37.0
+Dec 28, 2013 10:16:26 AM com.spagnola.lcars.elements.LCARSComponent mouseExited
+INFO: mouseExited: Test Button 3 - 55.0, 43.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseEntered
+INFO: mouseEntered: Test Button 2 - 38.0, 37.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 2 - 38.0, 37.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 2 - 17.0, 33.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 2 - 7.0, 32.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseExited
+INFO: mouseExited: Test Button 2 - -5.0, 30.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseEntered
+INFO: mouseEntered: Test Button - 84.0, 27.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button - 84.0, 27.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button - 69.0, 26.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button - 52.0, 25.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button - 36.0, 24.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button - 24.0, 23.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button - 9.0, 23.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseExited
+INFO: mouseExited: Test Button - -4.0, 22.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseEntered
+INFO: mouseEntered: Test Button - 25.0, 19.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button - 25.0, 19.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button - 57.0, 16.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseExited
+INFO: mouseExited: Test Button - 100.0, 12.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseEntered
+INFO: mouseEntered: Test Button 4 - 30.0, 11.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseMoved
+INFO: mouseMoved: Test Button 4 - 30.0, 11.0
+Dec 28, 2013 10:16:27 AM com.spagnola.lcars.elements.LCARSComponent mouseExited
+INFO: mouseExited: Test Button 4 - 125.0, 19.0
