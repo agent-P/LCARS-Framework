@@ -2,11 +2,10 @@ package com.spagnola.lcars.panels;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Locale;
 import java.util.TimeZone;
 
 import com.spagnola.lcars.LCARS;
+import com.spagnola.lcars.elements.LCARSAlarm;
 import com.spagnola.lcars.elements.LCARSButton;
 import com.spagnola.lcars.elements.LCARSCalendarPane;
 import com.spagnola.lcars.elements.LCARSCorner;
@@ -18,6 +17,7 @@ import com.spagnola.lcars.elements.LCARSTime;
 public class LClockPanel extends LCARSPanel {
 	
 	protected LCARSTime time;
+	protected LCARSTime time24;
 	protected LCARSTime time_with_seconds;
 	protected LCARSTime am_pm;
 	protected LCARSTime date;
@@ -25,9 +25,17 @@ public class LClockPanel extends LCARSPanel {
 	protected LCARSTime seconds;
 	protected LCARSTime time_zone;
 	
-	protected int mode = 0;
+	protected int mode = 1;
+	
+	protected static final int NUM_MODES = 3;
+	
+	protected static final int TIME_12 = 1;
+	protected static final int TIME_24 = 2;
+	protected static final int TIME_WITH_SECONDS = 3;
 
 	protected LCARSCalendarPane calendar;
+	
+	protected LCARSAlarm alarm;
 	
 	public LClockPanel() {
 		super();
@@ -88,27 +96,27 @@ public class LClockPanel extends LCARSPanel {
 		calendarFrame.setName("calendar");
 		add(calendarFrame);
 		
-		LCARSCorner clockFrame = new LCARSCorner(10, 372, 650,
+		LCARSCorner clockFrame = new LCARSCorner(10, 365, 650,
 				LCARS.EC_ORANGE|LCARS.ES_SHAPE_NW|LCARS.ES_STATIC);
 		clockFrame.setName("clock");
 		add(clockFrame);
 		
-		LCARSRectangle rect = new LCARSRectangle(665, 326, 30, 40, LCARS.EC_ORANGE|LCARS.ES_STATIC);
+		LCARSRectangle rect = new LCARSRectangle(665, 320, 30, 40, LCARS.EC_ORANGE|LCARS.ES_STATIC);
 		add(rect);
 
-		rect = new LCARSRectangle(700, 345, 775, 20, LCARS.EC_YELLOW|LCARS.ES_STATIC);
+		rect = new LCARSRectangle(700, 340, 775, 20, LCARS.EC_YELLOW|LCARS.ES_STATIC);
 		add(rect);
 
-		rect = new LCARSRectangle(700, 372, 775, 20, LCARS.EC_YELLOW|LCARS.ES_STATIC);
+		rect = new LCARSRectangle(700, 365, 775, 20, LCARS.EC_YELLOW|LCARS.ES_STATIC);
 		add(rect);
 
-		rect = new LCARSRectangle(1480, 335, 430, 30, LCARS.EC_ORANGE|LCARS.ES_STATIC);
+		rect = new LCARSRectangle(1480, 330, 430, 30, LCARS.EC_ORANGE|LCARS.ES_STATIC);
 		add(rect);
 
-		rect = new LCARSRectangle(1480, 372, 430, 30, LCARS.EC_M_BLUE|LCARS.ES_STATIC);
+		rect = new LCARSRectangle(1480, 365, 430, 30, LCARS.EC_M_BLUE|LCARS.ES_STATIC);
 		add(rect);
 
-		rect = new LCARSRectangle(665, 372, 30, 40, LCARS.EC_ORANGE|LCARS.ES_STATIC);
+		rect = new LCARSRectangle(665, 365, 30, 40, LCARS.EC_ORANGE|LCARS.ES_STATIC);
 		add(rect);
 
 		/**
@@ -121,6 +129,10 @@ public class LClockPanel extends LCARSPanel {
 		
 		time = new LCARSTime(725, 450, LCARSTime.TIME, 500, LCARS.EC_YELLOW|LCARS.ES_LABEL_NW);
 		add(time);
+		
+		time24 = new LCARSTime(725, 450, LCARSTime.TIME_24, 500, LCARS.EC_YELLOW|LCARS.ES_LABEL_NW);
+		add(time24);
+		time24.setVisible(false);
 		
 		seconds = new LCARSTime(1600, 450, LCARSTime.SECONDS, 240, LCARS.EC_M_BLUE|LCARS.ES_LABEL_NW);
 		add(seconds);
@@ -168,6 +180,110 @@ public class LClockPanel extends LCARSPanel {
 		add(lb);
 		
 		
+		/**
+		 * Alarm controls
+		 */
+		lb = new LCARSButton("Alarm On", 10, 460, 
+				LCARS.EF_BUTTON|LCARS.EC_ORANGE);
+		lb.setName("Alarm On");
+		lb.setActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				alarm.on();
+			}});
+		add(lb);
+				
+		lb = new LCARSButton("Alarm Off", 10, 525, 
+				LCARS.EF_BUTTON|LCARS.EC_ORANGE);
+		lb.setName("Alarm Off");
+		lb.setActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				alarm.off();
+			}});
+		add(lb);
+		
+		lb = new LCARSButton("Snooze", 10, 590, LCARSButton.defaultWidth, 340,
+				LCARS.ES_LABEL_C|LCARS.EF_BUTTON|LCARS.EC_ORANGE);
+		lb.setName("Snooze");
+		lb.setActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				alarm.snooze();
+			}});
+		add(lb);
+		
+		
+		alarm = new LCARSAlarm(200, 460, 150, LCARS.EC_ORANGE|LCARS.ES_LABEL_NW);
+		add(alarm); 
+		
+		
+		lb = new LCARSButton("12 / 24", 450, 670,
+				LCARS.ES_RECT_RND_E|LCARS.EF_BUTTON|LCARS.EC_ORANGE);
+		lb.setActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				alarm.toggleMode();
+			}});
+		add(lb);
+		
+		lb = new LCARSButton("Hours +", 450, 735,
+				LCARS.ES_RECT_RND_E|LCARS.EF_BUTTON|LCARS.EC_ORANGE);
+		lb.setActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				alarm.incrementAlarmHour();
+			}});
+		add(lb);
+		
+		lb = new LCARSButton("Minutes +", 450, 800,
+				LCARS.ES_RECT_RND_E|LCARS.EF_BUTTON|LCARS.EC_ORANGE);
+		lb.setActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				alarm.incrementAlarmMinute();
+			}});
+		add(lb);
+		
+		
+		lb = new LCARSButton("Hours --", 200, 735,
+				LCARS.ES_RECT_RND_W|LCARS.EF_BUTTON|LCARS.EC_ORANGE);
+		lb.setActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				alarm.decrementAlarmHour();
+			}});
+		add(lb);
+		
+		lb = new LCARSButton("Minutes --", 200, 800,
+				LCARS.ES_RECT_RND_W|LCARS.EF_BUTTON|LCARS.EC_ORANGE);
+		lb.setActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				alarm.decrementAlarmMinute();
+			}});
+		add(lb);
+		
+		
+		/**
+		 * Time mode select control
+		 */
+		lb = new LCARSButton("Mode Select", 10, 935, 
+				LCARS.EF_BUTTON|LCARS.EC_YELLOW);
+		lb.setName("Exit");
+		lb.setActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				nextMode();
+			}});
+		add(lb);
+		
+		
+		/**
+		 * Panel exit control
+		 */
+		lb = new LCARSButton("Exit", 10, 1000, 
+				LCARS.EF_BUTTON|LCARS.EC_ORANGE);
+		lb.setName("Exit");
+		lb.setActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				exit();
+			}});
+		add(lb);
+		
+		
+		
 		
 	}
 	
@@ -206,7 +322,47 @@ public class LClockPanel extends LCARSPanel {
 	}
 	
 	
-	public void setMode(int mode) {
+	/**
+	 * 
+	 */
+	public void setMode() {
+		/**
+		 * Only process valid modes.
+		 */
+		switch(mode) {
+		case TIME_12:
+			time24.setVisible(false);
+			time_with_seconds.setVisible(false);
+			time.setVisible(true);
+			am_pm.setVisible(true);
+			seconds.setVisible(true);
+			break;
+		case TIME_24:
+			time.setVisible(false);
+			time_with_seconds.setVisible(false);
+			am_pm.setVisible(false);
+			time24.setVisible(true);
+			seconds.setVisible(true);
+			break;
+		case TIME_WITH_SECONDS:
+			time.setVisible(false);
+			time24.setVisible(false);
+			am_pm.setVisible(false);
+			seconds.setVisible(false);
+			time_with_seconds.setVisible(true);
+			break;
+		}
+	}
+	
+	
+	public void nextMode() {
+		if(mode == NUM_MODES) {
+			mode = 1;
+		}
+		else {
+			mode = mode + 1;
+		}
 		
+		setMode();
 	}
 }

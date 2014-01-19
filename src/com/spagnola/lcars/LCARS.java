@@ -6,8 +6,12 @@ import java.awt.FontFormatException;
 import java.io.File;
 import java.io.IOException;
 import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.UnknownHostException;
+import java.util.Enumeration;
 import java.util.logging.Logger;
 
 public class LCARS {
@@ -292,11 +296,32 @@ public class LCARS {
 	
 	public static String getIPAddress() {
 		if(LCARS.ipAddress == null) {
+			LCARS.ipAddress = "127.0.0.1";
 			try {
-				LCARS.ipAddress = InetAddress.getLocalHost().getHostAddress();
+				InetAddress ipAddress = null;
+
+				Enumeration<NetworkInterface> netInterfaces = NetworkInterface.getNetworkInterfaces();
+				while(netInterfaces.hasMoreElements()) {
+					Enumeration<InetAddress> inetAddresses = netInterfaces.nextElement().getInetAddresses();
+					while(inetAddresses.hasMoreElements()) {
+						InetAddress ip = inetAddresses.nextElement();
+						if(ipAddress==null && !ip.isLoopbackAddress() && ip.getHostAddress().indexOf(":")==-1) {
+							ipAddress = ip;
+						}
+					}
+				}
+				if(ipAddress != null) {
+					LCARS.ipAddress = ipAddress.getHostAddress();
+				}
+				else {
+					throw new UnknownHostException();
+				}
 			}
-			catch (java.net.UnknownHostException e) {
-				LCARS.ipAddress = "127.0.0.1";
+			catch(UnknownHostException uhe) {
+				LOGGER.warning(uhe.getMessage() + " - Couldn't find IP address, returning local loop back address.");
+			}
+			catch(SocketException se) {
+				LOGGER.warning(se.getMessage() + " - Socket exception while trying to get network interfaces.");
 			}
 		}
 		

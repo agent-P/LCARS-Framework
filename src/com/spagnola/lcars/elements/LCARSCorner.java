@@ -16,7 +16,7 @@ public class LCARSCorner extends LCARSComponent {
 	 */
 	private static final long serialVersionUID = -3033525311661860404L;
 	
-	private static final int defaultHeight = 95;
+	private static final int defaultHeight = 90;
 	private static final int defaultBarV = 150;
 	private static final int defaultBarH = 30;
 	

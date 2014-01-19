@@ -351,7 +351,7 @@ public abstract class LCARSComponent extends JComponent implements MouseInputLis
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		
-		Point pt = e.getPoint();
+		//Point pt = e.getPoint();
 		//LOGGER.info("mouseClicked: " + this.getName() + " - " + pt.getX() + ", " + pt.getY());
 		
 		if(scaledArea.contains(e.getPoint())) {
@@ -367,7 +367,7 @@ public abstract class LCARSComponent extends JComponent implements MouseInputLis
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if(scaledArea.contains(e.getPoint())) {
-			Point pt = e.getPoint();
+			//Point pt = e.getPoint();
 			//LOGGER.info("mousePressed: " + this.getName() + " - " + pt.getX() + ", " + pt.getY());
 			
 			setBackground(pressedColor);
@@ -378,7 +378,7 @@ public abstract class LCARSComponent extends JComponent implements MouseInputLis
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if(scaledArea.contains(e.getPoint())) {
-			Point pt = e.getPoint();
+			//Point pt = e.getPoint();
 			//LOGGER.info("mouseReleased: " + this.getName() + " - " + pt.getX() + ", " + pt.getY());
 			
 			setBackground(hoverColor);
@@ -389,7 +389,7 @@ public abstract class LCARSComponent extends JComponent implements MouseInputLis
 	public void mouseEntered(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if(scaledArea.contains(e.getPoint())) {
-			Point pt = e.getPoint();
+			//Point pt = e.getPoint();
 			//LOGGER.info("mouseEntered: " + this.getName() + " - " + pt.getX() + ", " + pt.getY());
 			
 			setBackground(hoverColor);
@@ -400,7 +400,7 @@ public abstract class LCARSComponent extends JComponent implements MouseInputLis
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if(!scaledArea.contains(e.getPoint())) {
-			Point pt = e.getPoint();
+			//Point pt = e.getPoint();
 			//LOGGER.info("mouseExited: " + this.getName() + " - " + pt.getX() + ", " + pt.getY());
 			
 			setBackground(normalColor);
@@ -417,7 +417,7 @@ public abstract class LCARSComponent extends JComponent implements MouseInputLis
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
 		if(scaledArea.contains(e.getPoint())) {
-			Point pt = e.getPoint();
+			//Point pt = e.getPoint();
 			//LOGGER.info("mouseMoved: " + this.getName() + " - " + pt.getX() + ", " + pt.getY());
 			
 			setBackground(hoverColor);

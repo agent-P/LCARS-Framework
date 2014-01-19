@@ -86,7 +86,7 @@ public class LCARSTime extends LCARSLabel {
 	    setBounds(0, 0, w, h);
 		
 		setTextInsets(0, -10);
-		setForeground(LCARS.getLCARSColor(style));
+		//setForeground(LCARS.getLCARSColor(style));
 		
 		(new Timer()).schedule(new TimerTask() {
 			@Override
