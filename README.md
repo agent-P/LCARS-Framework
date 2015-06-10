@@ -5,20 +5,20 @@ A java framework for building LCARS displays as one or more swing application. I
 * frames
 ** LCARS_Frame
 * panels
-** LApplicationPanel
-** LClockPanel
-** LMainPanel
-** LoginPanel
+  * LApplicationPanel
+  * LClockPanel
+  * LMainPanel
+  * LoginPanel
 * elements
-** LCARSPanel
-** LCARSRectangle
-** LCARSButton
-** LCARSTextPane
-** LCARSLabel
-** LCARSCorner
-** LCARSCalendarPane
-** LCARSTime
-** LCARSAlarm
+  * LCARSPanel
+  * LCARSRectangle
+  * LCARSButton
+  * LCARSTextPane
+  * LCARSLabel
+  * LCARSCorner
+  * LCARSCalendarPane
+  * LCARSTime
+  * LCARSAlarm
 
 The test application, <code>com.spagnola.lcars.test.ClockTest.java</code> demonstrates how the components can be used. See the following image for visual of Component types and some of the color palette.
 
