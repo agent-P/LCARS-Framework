@@ -3,7 +3,7 @@ LCARS-Framework
 
 A java framework for building LCARS displays as one or more swing application. It extends <code>JComponent</code> to create LCARS components. It currently supports the following components:
 * frames
-** LCARS_Frame
+  * LCARS_Frame
 * panels
   * LApplicationPanel
   * LClockPanel
